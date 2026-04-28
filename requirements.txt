@@ -1,0 +1,5 @@
+# Excel Diff Application Dependencies
+# Python 3.8+
+
+openpyxl>=3.0.0
+pyinstaller>=5.0
