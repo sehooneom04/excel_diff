@@ -23,7 +23,7 @@ jobs:
 
     - name: exe 빌드
       run: |
-        pyinstaller --onefile --name ExcelDiff --console false excel_diff_app/__main__.py
+        pyinstaller --onefile --name ExcelDiff --noconsole excel_diff_app/__main__.py
 
     - name: 결과 업로드
       uses: actions/upload-artifact@v4
