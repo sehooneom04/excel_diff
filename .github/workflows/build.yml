@@ -19,7 +19,7 @@ jobs:
 
     - name: 라이브러리 설치
       run: |
-        pip install pyinstaller
+        pip install -r requirements.txt
 
     - name: exe 빌드
       run: |
