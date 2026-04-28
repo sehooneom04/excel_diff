@@ -13,6 +13,10 @@ a = Analysis(
     binaries=[],
     datas=[],
     hiddenimports=[
+        'tkinter',
+        'tkinter.ttk',
+        'tkinter.filedialog',
+        'tkinter.messagebox',
         'openpyxl',
         'openpyxl.cell',
         'openpyxl.styles',
