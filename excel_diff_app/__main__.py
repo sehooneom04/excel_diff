@@ -8,13 +8,24 @@ Excel 파일 비교 애플리케이션
 """
 
 import sys
+import os
 import argparse
 from pathlib import Path
 
+# PyInstaller에서 실행 시 경로 설정
+if getattr(sys, 'frozen', False):
+    # exe로打包된 경우 - _MEIPASS 폴더에서 모듈 찾기
+    application_path = sys._MEIPASS
+    sys.path.insert(0, application_path)
+else:
+    # 일반 Python 실행 시 현재 파일 기준 경로 설정
+    application_path = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    sys.path.insert(0, application_path)
+
 # GUI 모듈 import
-from .ui.main_window import run_gui
-from .core.differ import diff_excel, get_total_changes, format_stats_message
-from .core.constants import DEFAULT_OUTPUT
+from excel_diff_app.ui.main_window import run_gui
+from excel_diff_app.core.differ import diff_excel, get_total_changes, format_stats_message
+from excel_diff_app.core.constants import DEFAULT_OUTPUT
 
 
 def main_cli():

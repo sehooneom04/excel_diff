@@ -4,12 +4,13 @@
 PyInstaller spec file for Excel Diff Application
 Build: pyinstaller excel_diff.spec
 """
+import os
 
 block_cipher = None
 
 a = Analysis(
     ['excel_diff_app/__main__.py'],
-    pathex=[],
+    pathex=[os.path.abspath(".")],
     binaries=[],
     datas=[],
     hiddenimports=[
